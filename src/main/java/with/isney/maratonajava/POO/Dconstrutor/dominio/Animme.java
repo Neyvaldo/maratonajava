@@ -1,23 +1,28 @@
-package with.isney.maratonajava.POO.Csobrecargametodo.dominio;
+package with.isney.maratonajava.POO.Dconstrutor.dominio;
 
-public class Anime
+public class Animme
 {
     private String nome;
     private String tipo;
     private int episodio;
     private String genero;
+    private String studio;
 
-    public void init(String nome, String tipo, int episodio)
+
+    public Animme(String nome, String tipo, int episodio, String genero)
     {
         this.nome = nome;
         this.tipo = tipo;
         this.episodio = episodio;
+        this.genero = genero;
+
     }
 
-    public void init(String nome, String tipo, int episodio, String genero)
+    //Sobrecagra de construtor
+    public Animme(String nome, String tipo, int episodio, String genero, String studio)
     {
-        this.init(nome,tipo,episodio);
-        this.genero = genero;
+        this(nome,tipo,episodio,genero);
+        this.studio = studio;
     }
 
     public void imprime()
@@ -26,6 +31,7 @@ public class Anime
         System.out.println(this.tipo);
         System.out.println(this.episodio);
         System.out.println(this.genero);
+        System.out.println(this.studio);
     }
     public void setTipo(String tipo)
     {
